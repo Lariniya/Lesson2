@@ -2,7 +2,36 @@ package com.company;
 
 public class ClimatControlRemote extends Remote {
 
+    private int temperature;
+
     public ClimatControlRemote(long serialNumber) {
-        super(serialNumber); //идея требует такой же конструктор, как в классе-родителе. Создан автоматически. Слово super появилось автоматически, чтобы не писать много
-    } // isOn и serialNumber - приватные переменные, мы не можем их изменять и упоминать в этом классе. Можем только методы использовать
+        super(serialNumber);
+        temperature = 21;
+    }
+
+    @Override
+    public String toString() {
+        return "Я контролирую климат";
+    }
+
+    public boolean setTemperature(int newTemperature) {
+        if(validateTemperature(newTemperature)) {
+            this.temperature = newTemperature;
+            return true;
+        }
+        return false;
+    }
+
+    private boolean validateTemperature(int temperature) {
+        if(temperature>30){
+            System.out.println("Будет слишком жарко");
+            return false;
+        }
+
+        if(temperature<10){
+            System.out.println("ай эм нот холодильник");
+            return false;
+        }
+        else return true;
+    }
 }
