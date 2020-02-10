@@ -2,7 +2,13 @@ package svetlana.company;
 
 public class iPhone extends MobilePhone{
 
-    public iPhone(String producer) {
+    private int photo;
+
+    public iPhone (String producer) {
+
         super(producer);
+        photo = 10;
     }
+
+
 }
