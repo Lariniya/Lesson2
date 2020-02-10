@@ -2,16 +2,16 @@ package svetlana.company;
 
 public class MobilePhone {
 
-    private boolean isSoldOut;
+    private boolean isOn;
     private String producer;
 
     public MobilePhone(String producer) {
-        this.isSoldOut = false;
-        this.producer = producer; //телефон определенного производителя по-умолчанию не продан и лежит в магазине
+        this.isOn = false;
+        this.producer = producer; //телефон определенного производителя по-умолчанию выключен
     }
 
     public boolean turnOnOff(){
-        isSoldOut = !isSoldOut;
+        isOn = !isOn;
         return true;
     }
 
@@ -33,7 +33,7 @@ public class MobilePhone {
     @Override
     public String toString() {
         return "MobilePhone{" +
-                "isSoldOut=" + isSoldOut +
+                "isSoldOut=" + isOn +
                 ", producer='" + producer + '\'' +
                 '}';
     }
