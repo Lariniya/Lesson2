@@ -10,6 +10,9 @@ public class MobilePhone {
         this.producer = producer; //телефон определенного производителя по-умолчанию выключен
     }
 
+    public MobilePhone() {
+    }
+
     public boolean turnOnOff(){
         isOn = !isOn;
         return true;
